@@ -288,6 +288,11 @@
     grid-template-columns: repeat(auto-fit, minmax(min(100%/1, max(320px, 100%/3)), 1fr));
     gap: 24px;
   }
+  @media (min-width: 768px) {
+    .blog-grid {
+      grid-template-columns: calc((100% - (24px * 2))/3) calc((100% - (24px * 2))/3) calc((100% - (24px * 2))/3);
+    }
+  }
   .blog-card {
     background: white;
     border: 1px solid var(--border);
@@ -808,15 +813,15 @@
     <div class="inline-stats">
       <div class="inline-stat">
         <div class="inline-stat-num">+111%</div>
-        <div class="inline-stat-label">YoY organic leads<br>MW Solicitors</div>
-      </div>
-      <div class="inline-stat">
-        <div class="inline-stat-num">+16.3%</div>
-        <div class="inline-stat-label">Organic traffic increase<br>Rugs.ie</div>
+        <div class="inline-stat-label">YoY organic leads<br>JMW Solicitors</div>
       </div>
       <div class="inline-stat">
         <div class="inline-stat-num">+23.5%</div>
         <div class="inline-stat-label">Organic traffic increase<br>Cosmetic Surgery Solicitors</div>
+      </div>
+      <div class="inline-stat">
+        <div class="inline-stat-num">+16.3%</div>
+        <div class="inline-stat-label">Organic traffic increase<br>Rugs.ie</div>
       </div>
     </div>
 
