@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chloe Richards | Marketing Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #1A7A8A;
+    --teal-light: #e8f4f6;
+    --teal-mid: #2a9aac;
+    --dark: #111827;
+    --mid: #4B5563;
+    --soft: #6B7280;
+    --bg: #FAFAF9;
+    --white: #ffffff;
+    --accent: #E8B86D;
+    --border: #E5E7EB;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--dark);
+    line-height: 1.6;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--dark);
+    color: var(--white);
+    padding: 80px 60px 70px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 360px; height: 360px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(26,122,138,0.35) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: 30%;
+    width: 260px; height: 260px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(232,184,109,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 6vw, 72px);
+    font-weight: 700;
+    line-height: 1.05;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--teal-mid);
+  }
+  .hero-sub {
+    font-size: 17px;
+    color: rgba(255,255,255,0.65);
+    font-weight: 300;
+    max-width: 800px;
+    margin-bottom: 36px;
+    line-height: 1.7;
+  }
+  .hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .hero-tag {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.75);
+    letter-spacing: 0.3px;
+  }
+
+  /* ── NAV ── */
+  .nav {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 0 60px;
+    display: flex;
+    gap: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+  }
+  .nav a {
+    text-decoration: none;
+    color: var(--mid);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    padding: 18px 20px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+  }
+  .nav a:hover { color: var(--teal); border-bottom-color: var(--teal); }
+
+  /* ── SECTIONS ── */
+  .section {
+    padding: 80px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .section-header {
+    margin-bottom: 48px;
+  }
+  .section-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 10px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--dark);
+  }
+  .section-desc {
+    margin-top: 14px;
+    font-size: 16px;
+    color: var(--mid);
+    max-width: 800px;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* -- CLIENT SECTION -- */
+  .client-block {
+    margin-bottom: 72px;
+  }
+  .client-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 10px;
+  }
+  .client-pill {
+    background: var(--teal);
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 100px;
+  }
+  .client-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+  }
+  .client-result {
+    font-size: 14px;
+    color: var(--teal);
+    font-weight: 500;
+    margin-bottom: 28px;
+    padding-left: 2px;
+  }
+  .client-result span {
+    background: var(--teal-light);
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-weight: 600;
+  }
+
+  /* ── EMAIL GALLERY ── */
+  .email-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  .email-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    transition: transform 0.25s, box-shadow 0.25s;
+    cursor: pointer;
+  }
+  .email-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 36px rgba(0,0,0,0.12);
+  }
+  .email-thumb {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+  }
+  .email-caption {
+    padding: 14px 16px;
+    border-top: 1px solid var(--border);
+  }
+  .email-caption-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--dark);
+    margin-bottom: 3px;
+  }
+  .email-caption-type {
+    font-size: 11px;
+    color: var(--soft);
+    letter-spacing: 0.5px;
+  }
+
+  /* ── LIGHTBOX ── */
+  .lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.9);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  .lightbox.open { display: flex; }
+  .lightbox img {
+    max-height: 90vh;
+    max-width: 90vw;
+    border-radius: 8px;
+    object-fit: contain;
+  }
+  .lightbox-close {
+    position: fixed;
+    top: 20px; right: 28px;
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+    opacity: 0.7;
+    line-height: 1;
+    background: none;
+    border: none;
+  }
+  .lightbox-close:hover { opacity: 1; }
+
+  /* ── DIVIDER ── */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 0 60px;
+  }
+
+  /* ── BLOG SECTION ── */
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%/1, max(320px, 100%/3)), 1fr));
+    gap: 24px;
+  }
+  .blog-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .blog-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.09);
+    border-color: var(--teal);
+  }
+  .blog-client-tag {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--teal);
+  }
+  .blog-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--dark);
+  }
+  .blog-card p {
+    font-size: 14px;
+    color: var(--mid);
+    line-height: 1.6;
+    font-weight: 300;
+    flex: 1;
+  }
+  .blog-link {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--teal);
+    letter-spacing: 0.5px;
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .blog-link::after { content: '→'; }
+
+  /* ── EO SECTION ── */
+  .eo-section {
+    background: var(--dark);
+    padding: 80px 60px;
+    color: white;
+  }
+  .eo-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .eo-section .section-label { color: var(--accent); }
+  .eo-section .section-title { color: white; }
+  .eo-section .section-desc { color: rgba(255,255,255,0.6); }
+
+  .eo-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%/1, max(320px, 100%/3)), 1fr));
+    gap: 24px;
+    margin-top: 40px;
+  }
+  .eo-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 28px;
+    text-decoration: none;
+    color: white;
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+  }
+  .eo-card:hover {
+    background: rgba(255,255,255,0.09);
+    border-color: var(--teal-mid);
+    transform: translateY(-3px);
+  }
+  .eo-card-icon {
+    font-size: 28px;
+    margin-bottom: 14px;
+  }
+  .eo-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.35;
+  }
+  .eo-card p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.65;
+    font-weight: 300;
+    margin-bottom: 14px;
+  }
+  .eo-card-link {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--teal-mid);
+    letter-spacing: 0.5px;
+  }
+  .eo-card-link::after { content: ' →'; }
+
+  .eo-highlight {
+    background: linear-gradient(135deg, rgba(26,122,138,0.25) 0%, rgba(42,154,172,0.1) 100%);
+    border: 1px solid rgba(26,122,138,0.4);
+    border-radius: 16px;
+    padding: 32px 36px;
+    margin-top: 36px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+  .eo-highlight-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 60px;
+    font-weight: 700;
+    color: var(--teal-mid);
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .eo-highlight-text h4 {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .eo-highlight-text p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: var(--white);
+    border-top: 1px solid var(--border);
+    padding: 40px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    max-width: 100%;
+  }
+  .footer-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--dark);
+  }
+  .footer-contact {
+    font-size: 14px;
+    color: var(--mid);
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .footer-contact a {
+    color: var(--teal);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .footer-contact a:hover { text-decoration: underline; }
+
+  /* -- INLINE STATS (email section) -- */
+  .inline-stats {
+    display: flex;
+    gap: 0;
+    background: var(--teal);
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 56px;
+  }
+  .inline-stat {
+    flex: 1;
+    padding: 32px 28px;
+    text-align: center;
+    color: white;
+    border-right: 1px solid rgba(255,255,255,0.15);
+  }
+  .inline-stat:last-child { border-right: none; }
+  .inline-stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .inline-stat-label {
+    font-size: 13px;
+    opacity: 0.75;
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  /* -- SEO STATS (content section) -- */
+  .seo-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin-bottom: 52px;
+  }
+  .seo-stat {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 22px 20px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .seo-stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--teal);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .seo-stat-label {
+    font-size: 12px;
+    color: var(--mid);
+    font-weight: 400;
+    line-height: 1.4;
+  }
+  .seo-stat-client {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--soft);
+    margin-top: 4px;
+  }
+
+  /* -- CLIENT RELATIONS -- */
+  .clients-section {
+    background: var(--white);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 80px 60px;
+  }
+  .clients-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%/1, max(320px, 100%/3)), 1fr));
+    gap: 24px;
+    margin-top: 40px;
+  }
+  .testimonial-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 30px;
+    position: relative;
+  }
+  .testimonial-card::before {
+    content: '\201C';
+    font-family: 'Playfair Display', serif;
+    font-size: 72px;
+    color: var(--teal-light);
+    line-height: 0.8;
+    position: absolute;
+    top: 20px;
+    left: 24px;
+  }
+  .testimonial-text {
+    font-size: 15px;
+    color: var(--dark);
+    line-height: 1.7;
+    font-weight: 300;
+    margin-top: 28px;
+    font-style: italic;
+  }
+  .testimonial-author {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+  }
+  .testimonial-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--dark);
+  }
+  .testimonial-role {
+    font-size: 12px;
+    color: var(--soft);
+    margin-top: 2px;
+  }
+  .client-tenure {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 44px;
+  }
+  .tenure-badge {
+    background: var(--teal-light);
+    border: 1px solid rgba(26,122,138,0.2);
+    border-radius: 10px;
+    padding: 16px 22px;
+    flex: 1;
+    min-width: 180px;
+  }
+  .tenure-badge-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--teal);
+    margin-bottom: 4px;
+  }
+  .tenure-badge-detail {
+    font-size: 13px;
+    color: var(--mid);
+    font-weight: 300;
+  }
+
+  @media (max-width: 768px) {
+    .clients-section { padding-left: 24px; padding-right: 24px; }
+    .inline-stats { flex-direction: column; }
+    .inline-stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.15); }
+    .inline-stat:last-child { border-bottom: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">×</button>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">Marketing Portfolio</div>
+  <h1>Chloe <em>Richards</em></h1>
+  <p class="hero-sub">A results-driven marketing professional with seven years of experience spanning content strategy, SEO, multi-channel campaign management, and client services. Proven track record of leading end-to-end marketing strategies for a diverse portfolio of clients, from developing high-impact content and SEO programmes to launching and scaling new service lines from the ground up. Adept at translating business goals into compelling campaigns, managing cross-functional stakeholder relationships, and using data to drive continuous improvement.</p>
+  <div class="hero-tags">
+    <span class="hero-tag">Email Marketing</span>
+    <span class="hero-tag">Content Strategy</span>
+    <span class="hero-tag">SEO Content</span>
+    <span class="hero-tag">Client Management</span>
+    <span class="hero-tag">EO Trustee</span>
+  </div>
+</section>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="#email">Email Campaigns</a>
+  <a href="#content">Content &amp; SEO</a>
+  <a href="#clients">Client Relations</a>
+  <a href="#eo">EO Community Catalyst</a>
+</nav>
+
+<!-- stats moved into sections -->
+
+<!-- ── EMAIL CAMPAIGNS ── -->
+<div id="email">
+  <div class="section">
+    <div class="section-header">
+      <div class="section-label">Email Marketing</div>
+      <h2 class="section-title">Campaigns that convert</h2>
+      <p class="section-desc">A selection of campaign highlights across three client accounts, managed end-to-end in Klaviyo. These represent just a portion of the email work delivered across a broader portfolio of clients.</p>
+    </div>
+
+    <div class="inline-stats">
+      <div class="inline-stat">
+        <div class="inline-stat-num">+15%</div>
+        <div class="inline-stat-label">YoY email revenue<br>Morphy Richards</div>
+      </div>
+      <div class="inline-stat">
+        <div class="inline-stat-num">+41%</div>
+        <div class="inline-stat-label">YoY email revenue<br>Rugs.ie</div>
+      </div>
+      <div class="inline-stat">
+        <div class="inline-stat-num">+33%</div>
+        <div class="inline-stat-label">YoY email revenue<br>Best of British Beer</div>
+      </div>
+    </div>
+    <div class="client-block">
+      <div class="client-header">
+        <span class="client-pill">Client</span>
+        <span class="client-name">Morphy Richards</span>
+      </div>
+      <p class="client-result">Result: <span>+15% YoY email revenue</span></p>
+      <div class="email-gallery">
+        <div class="email-card" onclick="openLightbox('portfolio_assets/mr_welcome.png')">
+          <img class="email-thumb" src="portfolio_assets/mr_welcome.png" alt="Morphy Richards welcome email">
+          <div class="email-caption">
+            <div class="email-caption-title">Welcome Series</div>
+            <div class="email-caption-type">Onboarding flow</div>
+          </div>
+        </div>
+        <div class="email-card" onclick="openLightbox('portfolio_assets/mr_bronze_rewards.png')">
+          <img class="email-thumb" src="portfolio_assets/mr_bronze_rewards.png" alt="Morphy Richards rewards tier email">
+          <div class="email-caption">
+            <div class="email-caption-title">Loyalty Tier Upgrade</div>
+            <div class="email-caption-type">Rewards programme</div>
+          </div>
+        </div>
+        <div class="email-card" onclick="openLightbox('portfolio_assets/mr_vibe.png')">
+          <img class="email-thumb" src="portfolio_assets/mr_vibe.png" alt="Morphy Richards VIBE product launch">
+          <div class="email-caption">
+            <div class="email-caption-title">VIBE Product Launch</div>
+            <div class="email-caption-type">New product campaign</div>
+          </div>
+        </div>
+        <div class="email-card" onclick="openLightbox('portfolio_assets/mr_yearwrapped.png')">
+          <img class="email-thumb" src="portfolio_assets/mr_yearwrapped.png" alt="Morphy Richards 2025 year wrapped">
+          <div class="email-caption">
+            <div class="email-caption-title">2025 Year Wrapped</div>
+            <div class="email-caption-type">Brand engagement</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rugs.ie -->
+    <div class="client-block">
+      <div class="client-header">
+        <span class="client-pill">Client</span>
+        <span class="client-name">Rugs.ie</span>
+      </div>
+      <p class="client-result">Result: <span>+41% YoY email revenue</span></p>
+      <div class="email-gallery">
+        <div class="email-card" onclick="openLightbox('portfolio_assets/rugs_layered_1.png')">
+          <img class="email-thumb" src="portfolio_assets/rugs_layered_1.png" alt="Rugs.ie LAYERED collection email">
+          <div class="email-caption">
+            <div class="email-caption-title">LAYERED Collection Launch</div>
+            <div class="email-caption-type">New brand introduction</div>
+          </div>
+        </div>
+        <div class="email-card" onclick="openLightbox('portfolio_assets/rugs_geri.png')">
+          <img class="email-thumb" src="portfolio_assets/rugs_geri.png" alt="Rugs.ie x Geri Designs email">
+          <div class="email-caption">
+            <div class="email-caption-title">Rugs.ie × Geri Designs</div>
+            <div class="email-caption-type">Collaboration launch</div>
+          </div>
+        </div>
+        <div class="email-card" onclick="openLightbox('portfolio_assets/rugs_sophie.png')">
+          <img class="email-thumb" src="portfolio_assets/rugs_sophie.png" alt="Rugs.ie dopamine decor campaign">
+          <div class="email-caption">
+            <div class="email-caption-title">Sophie Robinson Collection</div>
+            <div class="email-caption-type">Trend-led campaign</div>
+          </div>
+        </div>
+        <div class="email-card" onclick="openLightbox('portfolio_assets/rugs_blackfriday.png')">
+          <img class="email-thumb" src="portfolio_assets/rugs_blackfriday.png" alt="Rugs.ie Black Friday email">
+          <div class="email-caption">
+            <div class="email-caption-title">Black Friday</div>
+            <div class="email-caption-type">Promotional campaign</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Best of British Beer -->
+    <div class="client-block">
+      <div class="client-header">
+        <span class="client-pill">Client</span>
+        <span class="client-name">Best of British Beer</span>
+      </div>
+      <p class="client-result">Result: <span>+33% YoY email revenue</span></p>
+      <div class="email-gallery">
+        <div class="email-card" onclick="openLightbox('portfolio_assets/bobb_easter.png')">
+          <img class="email-thumb" src="portfolio_assets/bobb_easter.png" alt="Best of British Beer Easter campaign">
+          <div class="email-caption">
+            <div class="email-caption-title">Easter Weekend Flash Sale</div>
+            <div class="email-caption-type">Seasonal promotional</div>
+          </div>
+        </div>
+        <div class="email-card" onclick="openLightbox('portfolio_assets/bobb_fathersday.png')">
+          <img class="email-thumb" src="portfolio_assets/bobb_fathersday.png" alt="Best of British Beer Father's Day campaign">
+          <div class="email-caption">
+            <div class="email-caption-title">Father's Day Gift Guide</div>
+            <div class="email-caption-type">Gifting campaign</div>
+          </div>
+        </div>
+        <div class="email-card" onclick="openLightbox('portfolio_assets/bobb_blackfriday.png')">
+          <img class="email-thumb" src="portfolio_assets/bobb_blackfriday.png" alt="Best of British Beer Black Friday campaign">
+          <div class="email-caption">
+            <div class="email-caption-title">Black Friday Sitewide Sale</div>
+            <div class="email-caption-type">Promotional campaign</div>
+          </div>
+        </div>
+        <div class="email-card" onclick="openLightbox('portfolio_assets/bobb_christmas.png')">
+          <img class="email-thumb" src="portfolio_assets/bobb_christmas.png" alt="Best of British Beer Christmas campaign">
+          <div class="email-caption">
+            <div class="email-caption-title">Stock Up for Christmas</div>
+            <div class="email-caption-type">Seasonal campaign</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="content">
+  <div class="section">
+    <div class="section-header">
+      <div class="section-label">Content &amp; SEO Writing</div>
+      <h2 class="section-title">Content that ranks and resonates</h2>
+      <p class="section-desc">SEO-optimised blog content and resources written for multiple agency clients, combining search intent with clear, engaging copy across legal, lifestyle, and interiors sectors.</p>
+    </div>
+
+    <div class="inline-stats">
+      <div class="inline-stat">
+        <div class="inline-stat-num">+111%</div>
+        <div class="inline-stat-label">YoY organic leads<br>MW Solicitors</div>
+      </div>
+      <div class="inline-stat">
+        <div class="inline-stat-num">+16.3%</div>
+        <div class="inline-stat-label">Organic traffic increase<br>Rugs.ie</div>
+      </div>
+      <div class="inline-stat">
+        <div class="inline-stat-num">+23.5%</div>
+        <div class="inline-stat-label">Organic traffic increase<br>Cosmetic Surgery Solicitors</div>
+      </div>
+    </div>
+
+    <div class="blog-grid">
+
+      <a class="blog-card" href="https://www.jmw.co.uk/services-for-you/personal-injury/blog/top-10-most-dangerous-roads-uk" target="_blank">
+        <div class="blog-client-tag">JMW Solicitors</div>
+        <h3>The Top 10 Most Dangerous Roads in the UK</h3>
+        <p>High-traffic SEO piece combining data-led research with practical advice for personal injury audiences. Designed to capture informational search intent and build topical authority.</p>
+        <span class="blog-link">Read article</span>
+      </a>
+
+      <a class="blog-card" href="https://www.jmw.co.uk/blog/accidents-abroad/what-difference-between-ghic-and-ehic" target="_blank">
+        <div class="blog-client-tag">JMW Solicitors</div>
+        <h3>GHIC vs EHIC: What's the Difference?</h3>
+        <p>Timely post targeting high-volume post-Brexit search queries around travel health insurance. Balances legal accuracy with accessible, conversational language.</p>
+        <span class="blog-link">Read article</span>
+      </a>
+
+      <a class="blog-card" href="https://www.jmw.co.uk/blog/accidents-in-a-hotel-or-resort/what-to-do-injured-hotel-abroad" target="_blank">
+        <div class="blog-client-tag">JMW Solicitors</div>
+        <h3>What to Do if You're Injured at a Hotel Abroad</h3>
+        <p>Practical, step-by-step guide targeting holiday injury queries. Written to convert high-intent readers into enquiries while providing genuinely useful information.</p>
+        <span class="blog-link">Read article</span>
+      </a>
+
+      <a class="blog-card" href="https://www.cosmeticsurgerysolicitors.co.uk/resources/what-does-process-rhinoplasty-look" target="_blank">
+        <div class="blog-client-tag">Cosmetic Surgery Solicitors</div>
+        <h3>What Does the Process of Rhinoplasty Look Like?</h3>
+        <p>Informational resource targeting pre-surgery search intent, establishing the client as an authoritative voice in cosmetic negligence and helping readers understand their rights.</p>
+        <span class="blog-link">Read article</span>
+      </a>
+
+      <a class="blog-card" href="https://www.cosmeticsurgerysolicitors.co.uk/resources/what-is-cosmetic-surgery-negligence" target="_blank">
+        <div class="blog-client-tag">Cosmetic Surgery Solicitors</div>
+        <h3>What Is Cosmetic Surgery Negligence?</h3>
+        <p>Pillar-style content piece explaining a core legal concept in accessible terms. Targets competitive informational keywords while supporting the client's conversion funnel.</p>
+        <span class="blog-link">Read article</span>
+      </a>
+
+      <a class="blog-card" href="https://www.cosmeticsurgerysolicitors.co.uk/resources/how-prove-clinical-negligence" target="_blank">
+        <div class="blog-client-tag">Cosmetic Surgery Solicitors</div>
+        <h3>How to Prove Clinical Negligence</h3>
+        <p>Step-by-step guide for people considering a negligence claim. Empathetic, precise writing that addresses reader anxiety while clearly communicating the legal process.</p>
+        <span class="blog-link">Read article</span>
+      </a>
+
+      <a class="blog-card" href="https://rugs.ie/blogs/news/introducing-the-new-laura-ashley-rugs-collection" target="_blank">
+        <div class="blog-client-tag">Rugs.ie</div>
+        <h3>Introducing the New Laura Ashley Rugs Collection</h3>
+        <p>Brand-aligned product launch post written to drive collection traffic and engage an interiors-savvy audience. Balances editorial tone with strong keyword integration.</p>
+        <span class="blog-link">Read article</span>
+      </a>
+
+      <a class="blog-card" href="https://rugs.ie/blogs/news/festive-design-tips-from-cormari" target="_blank">
+        <div class="blog-client-tag">Rugs.ie</div>
+        <h3>Festive Design Tips from Cormari</h3>
+        <p>Seasonal editorial content produced in partnership with an interior designer, an example of collaborative lifestyle-led content that drives organic traffic and engagement.</p>
+        <span class="blog-link">Read article</span>
+      </a>
+
+      <a class="blog-card" href="https://rugs.ie/blogs/news/the-best-rugs-to-tie-your-living-space-together" target="_blank">
+        <div class="blog-client-tag">Rugs.ie</div>
+        <h3>The Best Rugs to Tie Your Living Space Together</h3>
+        <p>Evergreen buying guide targeting high-intent search queries. Supports both SEO goals and the customer journey by helping readers find the right product for their home.</p>
+        <span class="blog-link">Read article</span>
+      </a>
+
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- CLIENT RELATIONS -->
+<section class="clients-section" id="clients">
+  <div class="clients-inner">
+    <div class="section-header">
+      <div class="section-label">Client Relations</div>
+      <h2 class="section-title">Long-standing partnerships built on trust</h2>
+      <p class="section-desc">A consistent theme across my agency career has been long-term client relationships. I embed myself in a client's brand, goals, and challenges, becoming a trusted extension of their team.</p>
+    </div>
+
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <p class="testimonial-text">Working with Chloe has been a genuinely great experience. She and the team are knowledgeable, collaborative, and consistently professional, with a really strong ethos that comes through in everything they do. Communication is clear, ideas are well thought through, and they feel like a true extension of our own team rather than an external partner. We genuinely enjoy working with them and look forward to continuing the relationship.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-name">Tristan Folkard</div>
+          <div class="testimonial-role">Marketing Director, Morphy Richards</div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-text">Having Chloe support us with email marketing, initially on a consultancy basis, has been incredibly useful. Her Klaviyo knowledge and content ideas have been instrumental in delivering the best Q4 we've had in what feels like a while!</p>
+        <div class="testimonial-author">
+          <div class="testimonial-name">Ruth Kelly</div>
+          <div class="testimonial-role">Marketing Manager, Rugs.ie</div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-text">Chloe came in at a critical time for ebuyer and has helped shore up our email strategy, especially in the run-up to Black Friday. Email performance in Q4 has been promising, not just from a YoY perspective, and provides a strong foundation for growth in 2025.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-name">Janine Howson</div>
+          <div class="testimonial-role">Previous CMO, ebuyer</div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-text">Having worked with a few email marketing specialists over the years, Chloe Richards stands out as something different entirely. She is dependable, highly knowledgeable and a genuine pleasure to work with. We have worked with Chloe for over 4 years and she has supported and helped to drive our growth. We've just had the best Q4 ever and she played a large part in that.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-name">Gill Sherwin</div>
+          <div class="testimonial-role">Co-Founder, Best of British Beer</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EO COMMUNITY CATALYST -->
+<section class="eo-section" id="eo">
+  <div class="eo-inner">
+    <div class="section-header">
+      <div class="section-label">EO Community Catalyst</div>
+      <h2 class="section-title">Co-founding a community from scratch</h2>
+      <p class="section-desc">I believe great communities don't just happen, they're built with intention. As an elected Employee-Ownership Trustee at I-COM since October 2024, I channelled that belief into the EO Community Catalyst. From concept to delivery, I've been at the heart of every event, shaping the agenda, producing the content, and working to create something that truly serves the North West EO community. The series is a partnership between the team at I-COM and the team at Still We Grow, brought to life through genuine collaboration between both organisations.</p>
+    </div>
+
+    <div class="eo-highlight">
+      <div class="eo-highlight-num">70+</div>
+      <div class="eo-highlight-text">
+        <h4>The North West's first community-led EO event series</h4>
+        <p>Co-founded and delivered in partnership between the teams at I-COM and Still We Grow, the inaugural event in November 2025 brought together over 40 employee-owners, trustees and independent trustees at Campfield, Manchester. Since then the community has grown to 70+ members, with a second event in March 2026 and more to come. Built by the community, for the community.</p>
+      </div>
+    </div>
+
+    <div class="eo-cards">
+      <a class="eo-card" href="https://www.eocommunitycatalyst.co.uk" target="_blank">
+        <div class="eo-card-icon">🌐</div>
+        <h3>EO Community Catalyst Website</h3>
+        <p>The home of the event series, built in partnership between the teams at I-COM and Still We Grow. A growing resource and community hub for EO businesses across the North West.</p>
+        <span class="eo-card-link">Visit site</span>
+      </a>
+      <a class="eo-card" href="https://www.i-com.net/blog/our-employee-ownership-community-catalyst-event-series" target="_blank">
+        <div class="eo-card-icon">💡</div>
+        <h3>Why We Created the EOCC Series</h3>
+        <p>My perspective on why we launched this series, what gap it fills in the EO landscape, and why community connection is so central to the employee ownership journey.</p>
+        <span class="eo-card-link">Read more</span>
+      </a>
+      <a class="eo-card" href="https://www.i-com.net/blog/our-eo-community-catalyst-event" target="_blank">
+        <div class="eo-card-icon">🎉</div>
+        <h3>Our Inaugural Event: November 2025</h3>
+        <p>A recap of the first event I helped plan and deliver, panels, open conversations and the moment the North West EO community gathered together for the first time.</p>
+        <span class="eo-card-link">Read more</span>
+      </a>
+      <a class="eo-card" href="https://www.i-com.net/blog/exploring-financial-freedom-day-at-our-latest-eocc-event" target="_blank">
+        <div class="eo-card-icon">📈</div>
+        <h3>Exploring Financial Freedom Day: March 2026</h3>
+        <p>Our second event tackled one of the most complex topics in employee ownership. I was involved in shaping the agenda, sourcing speakers and delivering the event on the day.</p>
+        <span class="eo-card-link">Read more</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-name">Chloe Richards</div>
+  <div class="footer-contact">
+    <a href="mailto:chloerichards14@gmail.com">chloerichards14@gmail.com</a>
+    <a href="tel:07788584543">07788 584543</a>
+    <a href="https://www.linkedin.com/in/chloe-richards-0a5b55187/" target="_blank">LinkedIn</a>
+  </div>
+</footer>
+
+<script>
+  function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+</script>
+</body>
+</html>
