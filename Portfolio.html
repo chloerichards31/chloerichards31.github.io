@@ -160,6 +160,9 @@
   .client-block {
     margin-bottom: 72px;
   }
+  .client-block:last-child {
+    margin-bottom: 0;
+  }
   .client-header {
     display: flex;
     align-items: center;
@@ -196,6 +199,10 @@
   }
 
   /* ── EMAIL GALLERY ── */
+  .email-section {
+    background-color: rgb(255,255,255);
+  }
+
   .email-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -648,7 +655,7 @@
 <!-- stats moved into sections -->
 
 <!-- ── EMAIL CAMPAIGNS ── -->
-<div id="email">
+<div id="email" class="email-section">
   <div class="section">
     <div class="section-header">
       <div class="section-label">Email Marketing</div>
@@ -787,6 +794,9 @@
     </div>
   </div>
 </div>
+
+<hr class="divider">
+
 <div id="content">
   <div class="section">
     <div class="section-header">
